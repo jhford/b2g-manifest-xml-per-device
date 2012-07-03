@@ -18,8 +18,8 @@
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="dalvik" name="fake-dalvik" remote="b2g" revision="master" />
-  <project path="gaia" name="gaia" remote="b2g" revision="master" />
-  <project path="gecko" name="mozilla-central" remote="b2g" revision="master" />
+  <project path="gaia" name="gaia" remote="b2g" revision="m4-demo-candidate-1" />
+  <project path="gecko" name="mozilla-central" remote="b2g" revision="m4-demo-candidate-1" />
   <project path="gonk-misc" name="gonk-misc" remote="b2g" revision="master" />
   <project path="rilproxy" name="rilproxy" remote="b2g" revision="master" />
 
