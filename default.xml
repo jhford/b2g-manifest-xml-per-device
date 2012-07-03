@@ -1,105 +1,98 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<manifest>
+<?xml version="1.0" ?><manifest>
 
-  <remote  name="aosp"
-           fetch="https://android.googlesource.com/" />
-  <remote name="b2g"
-          fetch="git://github.com/mozilla-b2g/" />
-  <remote name="caf"
-          fetch="git://codeaurora.org/" />
-  <remote  name="linaro"
-           fetch="git://android.git.linaro.org/" />
-  <default revision="ics_chocolate"
-           remote="caf"
-           sync-j="4" />
+  <remote fetch="https://android.googlesource.com/" name="aosp"/>
+  <remote fetch="git://github.com/mozilla-b2g/" name="b2g"/>
+  <remote fetch="git://codeaurora.org/" name="caf"/>
+  <remote fetch="git://android.git.linaro.org/" name="linaro"/>
+  <default remote="caf" revision="ics_chocolate" sync-j="4"/>
 
   <!-- Gonk specific things and forks -->
-  <project path="build" name="platform_build" remote="b2g" revision="master">
-    <copyfile src="core/root.mk" dest="Makefile" />
+  <project name="platform_build" path="build" remote="b2g" revision="e83f912eff48cf55637959561d2155881b7e8643">
+    <copyfile dest="Makefile" src="core/root.mk"/>
   </project>
-  <project path="dalvik" name="fake-dalvik" remote="b2g" revision="master" />
-  <project path="gaia" name="gaia" remote="b2g" revision="m4-demo-candidate-1" />
-  <project path="gecko" name="mozilla-central" remote="b2g" revision="m4-demo-candidate-1" />
-  <project path="gonk-misc" name="gonk-misc" remote="b2g" revision="master" />
-  <project path="rilproxy" name="rilproxy" remote="b2g" revision="master" />
+  <project name="fake-dalvik" path="dalvik" remote="b2g" revision="ca1f327d5acc198bb4be62fa51db2c039032c9ce"/>
+  <!-- Information: gaia is tagged with m4-demo-candidate-1 --><project name="gaia" path="gaia" remote="b2g" revision="b6ccc62fb8f89c49d344f401cc4d992f372b2aa4"/>
+  <!-- Information: mozilla-central is tagged with m4-demo-candidate-1 --><project name="mozilla-central" path="gecko" remote="b2g" revision="2491fb74f90d7e7437f0f0af232122bc5c6d72da"/>
+  <project name="gonk-misc" path="gonk-misc" remote="b2g" revision="c1d8a8c29ac7d0c9d1468a3649b3a88f56c525db"/>
+  <project name="rilproxy" path="rilproxy" remote="b2g" revision="32106d4ea635ebe17a1610b643b398db639b8b97"/>
 
   <!-- Stock Android things -->
-  <project path="abi/cpp" name="platform/abi/cpp" />
-  <project path="bionic" name="platform/bionic" />
-  <project path="bootable/recovery" name="platform/bootable/recovery" />
-  <project path="development" name="platform/development" />
-  <project path="device/common" name="device/common" />
-  <project path="device/sample" name="device/sample" />
-  <project path="external/apache-http" name="platform/external/apache-http" />
-  <project path="external/bluetooth/bluez" name="platform/external/bluetooth/bluez" />
-  <project path="external/bluetooth/glib" name="platform/external/bluetooth/glib" />
-  <project path="external/bsdiff" name="platform/external/bsdiff" />
-  <project path="external/bzip2" name="platform/external/bzip2" />
-  <project path="external/dbus" name="platform/external/dbus" />
-  <project path="external/dhcpcd" name="platform/external/dhcpcd" />
-  <project path="external/dnsmasq" name="platform/external/dnsmasq" />
-  <project path="external/expat" name="platform/external/expat" />
-  <project path="external/fdlibm" name="platform/external/fdlibm" />
-  <project path="external/flac" name="platform/external/flac" />
-  <project path="external/freetype" name="platform/external/freetype" />
-  <project path="external/giflib" name="platform/external/giflib" />
-  <project path="external/gtest" name="platform/external/gtest" remote="linaro" revision="master" />
-  <project path="external/harfbuzz" name="platform/external/harfbuzz" />
-  <project path="external/icu4c" name="platform/external/icu4c" />
-  <project path="external/iptables" name="platform/external/iptables" />
-  <project path="external/jhead" name="platform/external/jhead" />
-  <project path="external/jpeg" name="platform/external/jpeg" />
-  <project path="external/libgsm" name="platform/external/libgsm" />
-  <project path="external/liblzf" name="platform/external/liblzf" />
-  <project path="external/libnfc-nxp" name="platform/external/libnfc-nxp" />
-  <project path="external/libnl-headers" name="platform/external/libnl-headers" />
-  <project path="external/libphonenumber" name="platform/external/libphonenumber" />
-  <project path="external/libpng" name="platform/external/libpng" />
-  <project path="external/libvpx" name="platform/external/libvpx" />
-  <project path="external/llvm" name="platform/external/llvm" />
-  <project path="external/mksh" name="platform/external/mksh" />
-  <project path="external/openssl" name="platform/external/openssl" />
-  <project path="external/protobuf" name="platform/external/protobuf" />
-  <project path="external/safe-iop" name="platform/external/safe-iop" />
-  <project path="external/skia" name="platform/external/skia" />
-  <project path="external/sonivox" name="platform/external/sonivox" />
-  <project path="external/speex" name="platform/external/speex" />
-  <project path="external/sqlite" name="platform/external/sqlite" remote="linaro" revision="master" />
-  <project path="external/stlport" name="platform/external/stlport" />
-  <project path="external/tagsoup" name="platform/external/tagsoup" />
-  <project path="external/tinyalsa" name="platform/external/tinyalsa" />
-  <project path="external/tremolo" name="platform/external/tremolo" />
-  <project path="external/webp" name="platform/external/webp" />
-  <project path="external/webrtc" name="platform/external/webrtc" />
-  <project path="external/wpa_supplicant" name="platform/external/wpa_supplicant" />
-  <project path="external/hostap" name="platform/external/hostap" />
-  <project path="external/zlib" name="platform/external/zlib" />
-  <project path="external/yaffs2" name="platform/external/yaffs2" />
-  <project path="frameworks/base" name="platform/frameworks/base" />
-  <project path="frameworks/opt/emoji" name="platform/frameworks/opt/emoji" />
-  <project path="frameworks/support" name="platform/frameworks/support" />
-  <project path="hardware/libhardware" name="platform/hardware/libhardware" />
-  <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" />
-  <project path="libcore" name="platform/libcore" />
-  <project path="ndk" name="platform/ndk" />
-  <project path="prebuilt" name="platform/prebuilt" />
-  <project path="system/bluetooth" name="platform/system/bluetooth" />
-  <project path="system/core" name="platform/system/core" />
-  <project path="system/extras" name="platform/system/extras" />
-  <project path="system/media" name="platform/system/media" />
-  <project path="system/netd" name="platform/system/netd" />
-  <project path="system/vold" name="platform/system/vold" />
+  <!-- Information: platform/abi/cpp is tagged with M8960AAAAANLYA1722 --><project name="platform/abi/cpp" path="abi/cpp" revision="6426040f1be4a844082c9769171ce7f5341a5528"/>
+  <!-- Information: platform/bionic is tagged with M8960AAAAANLYA153611 --><project name="platform/bionic" path="bionic" revision="5555db0cd15e95e05c940376ecf41803c67ae137"/>
+  <!-- Information: platform/bootable/recovery is tagged with M8960AAAAANLYA153611 --><project name="platform/bootable/recovery" path="bootable/recovery" revision="310775d5d1df9567a68d0df2c39b4dbb886596aa"/>
+  <!-- Information: platform/development is tagged with M8960AAAAANLYA153611 --><project name="platform/development" path="development" revision="a384622f5fcb1d2bebb9102591ff7ae91fe8ed2d"/>
+  <!-- Information: device/common is tagged with M8960AAAAANLYA153611 --><project name="device/common" path="device/common" revision="7c65ea240157763b8ded6154a17d3c033167afb7"/>
+  <!-- Information: device/sample is tagged with M8960AAAAANLYA153611 --><project name="device/sample" path="device/sample" revision="5c65b46f3f65e204e9d194004d12be3e01fbf183"/>
+  <!-- Information: platform/external/apache-http is tagged with M8960AAAAANLYA1722 --><project name="platform/external/apache-http" path="external/apache-http" revision="6c9d8c58d3ed710f87c26820d903bb8aad81754f"/>
+  <!-- Information: platform/external/bluetooth/bluez is tagged with M8960AAAAANLYA153611 --><project name="platform/external/bluetooth/bluez" path="external/bluetooth/bluez" revision="72a02799832672c24061709d7b092ca1caee24d9"/>
+  <!-- Information: platform/external/bluetooth/glib is tagged with M8960AAAAANLYA1722 --><project name="platform/external/bluetooth/glib" path="external/bluetooth/glib" revision="c6b49241cc1a8950723a5f74f8f4b4f4c3fa970e"/>
+  <!-- Information: platform/external/bsdiff is tagged with M8960AAAAANLYA1722 --><project name="platform/external/bsdiff" path="external/bsdiff" revision="81872540236d9bb15cccf963d05b9de48baa5375"/>
+  <!-- Information: platform/external/bzip2 is tagged with M8960AAAAANLYA1722 --><project name="platform/external/bzip2" path="external/bzip2" revision="048dacdca43eed1534689ececcf2781c63e1e4ba"/>
+  <!-- Information: platform/external/dbus is tagged with M8960AAAAANLYA153611 --><project name="platform/external/dbus" path="external/dbus" revision="c7517b6195dc6926728352113e6cc335da3f9c9e"/>
+  <!-- Information: platform/external/dhcpcd is tagged with M8960AAAAANLYA153611 --><project name="platform/external/dhcpcd" path="external/dhcpcd" revision="1e00fb67022d0921af0fead263f81762781b9ffa"/>
+  <!-- Information: platform/external/dnsmasq is tagged with M8960AAAAANLYA1722 --><project name="platform/external/dnsmasq" path="external/dnsmasq" revision="f621afad94df46204c25fc2593a19d704d2637f5"/>
+  <!-- Information: platform/external/expat is tagged with M8960AAAAANLYA1722 --><project name="platform/external/expat" path="external/expat" revision="6df134250feab71edb5915ecaa6268210bca76c5"/>
+  <!-- Information: platform/external/fdlibm is tagged with M8960AAAAANLYA1722 --><project name="platform/external/fdlibm" path="external/fdlibm" revision="988ffeb12a6e044ae3504838ef1fee3fe0716934"/>
+  <!-- Information: platform/external/flac is tagged with M8960AAAAANLYA1722 --><project name="platform/external/flac" path="external/flac" revision="5893fbe890f5dab8e4146d2baa4bd2691c0739e0"/>
+  <!-- Information: platform/external/freetype is tagged with M8960AAAAANLYA1722 --><project name="platform/external/freetype" path="external/freetype" revision="aeb407daf3711a10a27f3bc2223c5eb05158076e"/>
+  <!-- Information: platform/external/giflib is tagged with M8960AAAAANLYA1722 --><project name="platform/external/giflib" path="external/giflib" revision="b2597268aef084202a8c349d1cc072c03c6e22eb"/>
+  <!-- Information: platform/external/gtest is tagged with android-sdk-adt_r20 --><project name="platform/external/gtest" path="external/gtest" remote="linaro" revision="fd5f0270e58eec02a4b23981d18ad9d74113a5d6"/>
+  <!-- Information: platform/external/harfbuzz is tagged with M8960AAAAANLYA1722 --><project name="platform/external/harfbuzz" path="external/harfbuzz" revision="116610d63a859521dacf00fb6818ee9ab2e666f6"/>
+  <!-- Information: platform/external/icu4c is tagged with M8960AAAAANLYA1722 --><project name="platform/external/icu4c" path="external/icu4c" revision="0fa67b93b831c6636ca18b152a1b1b14cc99b034"/>
+  <!-- Information: platform/external/iptables is tagged with M8960AAAAANLYA1722 --><project name="platform/external/iptables" path="external/iptables" revision="3b2deb17f065c5664bb25e1a28489e5792eb63ff"/>
+  <!-- Information: platform/external/jhead is tagged with M8960AAAAANLYA1722 --><project name="platform/external/jhead" path="external/jhead" revision="754078052c687f6721536009c816644c73e4f145"/>
+  <!-- Information: platform/external/jpeg is tagged with M8960AAAAANLYA153611 --><project name="platform/external/jpeg" path="external/jpeg" revision="a62e464d672a4623233180e4023034bf825f066e"/>
+  <!-- Information: platform/external/libgsm is tagged with M8960AAAAANLYA1722 --><project name="platform/external/libgsm" path="external/libgsm" revision="5e4516958690b9a1b2c98f88eeecba3edd2dbda4"/>
+  <!-- Information: platform/external/liblzf is tagged with M8960AAAAANLYA1722 --><project name="platform/external/liblzf" path="external/liblzf" revision="6946aa575b0949d045722794850896099d937cbb"/>
+  <!-- Information: platform/external/libnfc-nxp is tagged with M8960AAAAANLYA1722 --><project name="platform/external/libnfc-nxp" path="external/libnfc-nxp" revision="3a912b065a31a72c63ad56ac224cfeaa933423b6"/>
+  <!-- Information: platform/external/libnl-headers is tagged with M8960AAAAANLYA1722 --><project name="platform/external/libnl-headers" path="external/libnl-headers" revision="6ccf7349d61f73ac26a0675d735d903ab919c658"/>
+  <!-- Information: platform/external/libphonenumber is tagged with M8960AAAAANLYA1722 --><project name="platform/external/libphonenumber" path="external/libphonenumber" revision="8d22c9a05eda1935c6dc27d188158e6ee38dc016"/>
+  <!-- Information: platform/external/libpng is tagged with M8960AAAAANLYA153611 --><project name="platform/external/libpng" path="external/libpng" revision="18c03139328d77cb4cd95e8b3c857f1889a3a1c9"/>
+  <!-- Information: platform/external/libvpx is tagged with M8960AAAAANLYA1722 --><project name="platform/external/libvpx" path="external/libvpx" revision="3a40da0d96da5c520e7707aa14f48a80956e20d7"/>
+  <!-- Information: platform/external/llvm is tagged with M8960AAAAANLYA153611 --><project name="platform/external/llvm" path="external/llvm" revision="bff5923831940309f7d8ddbff5826ca6ed2dc050"/>
+  <!-- Information: platform/external/mksh is tagged with M8960AAAAANLYA153611 --><project name="platform/external/mksh" path="external/mksh" revision="ec646e8f5e7dac9a77d1de549c6ed92c04d0cd4b"/>
+  <!-- Information: platform/external/openssl is tagged with M8960AAAAANLYA153611 --><project name="platform/external/openssl" path="external/openssl" revision="4ee017fe33f8e5ab301b06c3ec8b4ac33b8ae532"/>
+  <!-- Information: platform/external/protobuf is tagged with M8960AAAAANLYA1722 --><project name="platform/external/protobuf" path="external/protobuf" revision="e217977611c52bccde7f7c78e1d3c790c6357431"/>
+  <!-- Information: platform/external/safe-iop is tagged with M8960AAAAANLYA1722 --><project name="platform/external/safe-iop" path="external/safe-iop" revision="07073634e2e3aa4f518e36ed5dec3aabc549d5fb"/>
+  <!-- Information: platform/external/skia is tagged with M8960AAAAANLYA153611 --><project name="platform/external/skia" path="external/skia" revision="45c639771486f39503431d71b5bb71e0080e83d2"/>
+  <!-- Information: platform/external/sonivox is tagged with M8960AAAAANLYA153611 --><project name="platform/external/sonivox" path="external/sonivox" revision="7c967779dfc61ac1f346e972de91d4bfce7dccbb"/>
+  <!-- Information: platform/external/speex is tagged with M8960AAAAANLYA1722 --><project name="platform/external/speex" path="external/speex" revision="ebe6230a7f7c69f5a4389f2b09b7b19ef9e94f32"/>
+  <!-- Information: platform/external/sqlite is tagged with android-sdk-adt_r20 --><project name="platform/external/sqlite" path="external/sqlite" remote="linaro" revision="1eabc582f36e76a4ca6392960ab89930854b4a6b"/>
+  <!-- Information: platform/external/stlport is tagged with M8960AAAAANLYA1722 --><project name="platform/external/stlport" path="external/stlport" revision="a6734e0645fce81c9610de0488b729207bfa576e"/>
+  <!-- Information: platform/external/tagsoup is tagged with M8960AAAAANLYA1722 --><project name="platform/external/tagsoup" path="external/tagsoup" revision="68c2ec9e0acdb3214b7fb91dbab8c9fab8736817"/>
+  <!-- Information: platform/external/tinyalsa is tagged with M8960AAAAANLYA153611 --><project name="platform/external/tinyalsa" path="external/tinyalsa" revision="06cc244ee512c1352215e543615738bc8ac82814"/>
+  <!-- Information: platform/external/tremolo is tagged with M8960AAAAANLYA1722 --><project name="platform/external/tremolo" path="external/tremolo" revision="25bd78d2392dbdc879ae53382cde9d019f79cf6f"/>
+  <!-- Information: platform/external/webp is tagged with M8960AAAAANLYA1722 --><project name="platform/external/webp" path="external/webp" revision="88fe2b83c4b9232cd08729556fd0485d6a6a92cd"/>
+  <!-- Information: platform/external/webrtc is tagged with M8960AAAAANLYA1722 --><project name="platform/external/webrtc" path="external/webrtc" revision="137024dc8a2e9251a471e20518a9c3ae06f81f23"/>
+  <!-- Information: platform/external/wpa_supplicant is tagged with M8960AAAAANLYA1722 --><project name="platform/external/wpa_supplicant" path="external/wpa_supplicant" revision="a01d37870bbf9892d43e792e5de0683ca41c5497"/>
+  <!-- Information: platform/external/hostap is tagged with M8960AAAAANLYA153611 --><project name="platform/external/hostap" path="external/hostap" revision="d1eb99a0fc00870cc3afff599e5e7c31469561e6"/>
+  <!-- Information: platform/external/zlib is tagged with M8960AAAAANLYA1722 --><project name="platform/external/zlib" path="external/zlib" revision="f96a1d1ebfdf1cd582210fd09c23d8f59e0ae094"/>
+  <!-- Information: platform/external/yaffs2 is tagged with M8960AAAAANLYA1722 --><project name="platform/external/yaffs2" path="external/yaffs2" revision="0afa916204c664b3114429637b63af1321a0aeca"/>
+  <project name="platform/frameworks/base" path="frameworks/base" revision="8df9165175515b076e7b325dc1a68341bbc33bf6"/>
+  <!-- Information: platform/frameworks/opt/emoji is tagged with M8960AAAAANLYA1722 --><project name="platform/frameworks/opt/emoji" path="frameworks/opt/emoji" revision="a95d8db002770469d72dfaf59ff37ac96db29a87"/>
+  <!-- Information: platform/frameworks/support is tagged with M8960AAAAANLYA153611 --><project name="platform/frameworks/support" path="frameworks/support" revision="27208692b001981f1806f4f396434f4eac78b909"/>
+  <!-- Information: platform/hardware/libhardware is tagged with M8960AAAAANLYA153611 --><project name="platform/hardware/libhardware" path="hardware/libhardware" revision="f9ebf828a7e93d81c974d4a82808896d641d7c8a"/>
+  <!-- Information: platform/hardware/libhardware_legacy is tagged with M8960AAAAANLYA153611 --><project name="platform/hardware/libhardware_legacy" path="hardware/libhardware_legacy" revision="87b4d7afa8f854b445e2d0d95091f6f6069f2b30"/>
+  <!-- Information: platform/libcore is tagged with M8960AAAAANLYA153611 --><project name="platform/libcore" path="libcore" revision="9d8abfe39f2472d9eabbb7591d55a6b681a17b31"/>
+  <!-- Information: platform/ndk is tagged with M8960AAAAANLYA1722 --><project name="platform/ndk" path="ndk" revision="9f555971e1481854d5b4dc11b3e6af9fff4f241f"/>
+  <!-- Information: platform/prebuilt is tagged with M8960AAAAANLYA153611 --><project name="platform/prebuilt" path="prebuilt" revision="447ea790fcc957dde59730ecc2a65ca263bdc733"/>
+  <!-- Information: platform/system/bluetooth is tagged with M8960AAAAANLYA153611 --><project name="platform/system/bluetooth" path="system/bluetooth" revision="4565518db82a11be1d690384bedc313d5bed3be7"/>
+  <!-- Information: platform/system/core is tagged with M8960AAAAANLYA153611 --><project name="platform/system/core" path="system/core" revision="498f0f1c36cfeb08c6011c03b69630aba6882676"/>
+  <!-- Information: platform/system/extras is tagged with M8960AAAAANLYA153611 --><project name="platform/system/extras" path="system/extras" revision="01db6c1254e1407740a543f24317fc540fc4c049"/>
+  <!-- Information: platform/system/media is tagged with M8960AAAAANLYA153611 --><project name="platform/system/media" path="system/media" revision="7f71c7fd362bbd992ff2e0e80f7af5859ad116ad"/>
+  <!-- Information: platform/system/netd is tagged with M8960AAAAANLYA153611 --><project name="platform/system/netd" path="system/netd" revision="3ec94661ee989e98a637938629fe8a236556305d"/>
+  <!-- Information: platform/system/vold is tagged with M8960AAAAANLYA153611 --><project name="platform/system/vold" path="system/vold" revision="ff8140d29751e95aa28fac28c660859e9f624e61"/>
 
   <!-- Otoro specific things -->
-  <project path="device/qcom/common" name="device/qcom/common" />
-  <project path="device/qcom/msm7627a" name="platform/vendor/qcom/msm7627a" />
-  <project path="device/qcom/otoro" name="android-device-otoro" remote="b2g" revision="master" />
-  <project path="kernel" name="kernel/msm" remote="caf" revision="msm-3.0" />
-  <project path="hardware/qcom/camera" name="platform/hardware/qcom/camera" />
-  <project path="hardware/qcom/display" name="hardware_qcom_display" remote="b2g" />
-  <project path="hardware/qcom/media" name="platform/hardware/qcom/media" />
-  <project path="hardware/qcom/gps" name="platform/hardware/qcom/gps" />
-  <project path="hardware/msm7k" name="platform/hardware/msm7k" />
-  <project path="vendor/qcom/opensource/omx/mm-core" name="platform/vendor/qcom-opensource/omx/mm-core" />
-  <project path="hardware/ril" name="platform/hardware/ril" remote="caf" revision="fe9a3f63922143b57e79ed570bab2328df8c83a5"/>
+  <!-- Information: device/qcom/common is tagged with M8960AAAAANLYA153611 --><project name="device/qcom/common" path="device/qcom/common" revision="8e0cf8d59ac3fa0ba1a14cb4588eddf57dcb300f"/>
+  <!-- Information: platform/vendor/qcom/msm7627a is tagged with M8960AAAAANLYA153611 --><project name="platform/vendor/qcom/msm7627a" path="device/qcom/msm7627a" revision="4e69af9120d3b3147517904113666dbc0198635a"/>
+  <project name="android-device-otoro" path="device/qcom/otoro" remote="b2g" revision="6990e2318169d502efcb4ab552c37f900d810f49"/>
+  <project name="kernel/msm" path="kernel" remote="caf" revision="d5fa0c97213c2238acf55b749eecdd70f1afe5a5"/>
+  <!-- Information: platform/hardware/qcom/camera is tagged with M8960AAAAANLYA153611 --><project name="platform/hardware/qcom/camera" path="hardware/qcom/camera" revision="6ea923f02bd5887308955e1b82d77fe2f3256236"/>
+  <project name="hardware_qcom_display" path="hardware/qcom/display" remote="b2g" revision="e8de07329ce2f541a6bb21c5d72684aa9d9495ec"/>
+  <project name="platform/hardware/qcom/media" path="hardware/qcom/media" revision="02270ab1171382ae21d6c6b3ca1829470b92d697"/>
+  <!-- Information: platform/hardware/qcom/gps is tagged with M8960AAAAANLYA153611 --><project name="platform/hardware/qcom/gps" path="hardware/qcom/gps" revision="7e5b7d1e80ebcafae1cc37f7ac83a1257edbc344"/>
+  <!-- Information: platform/hardware/msm7k is tagged with M8960AAAAANLYA1722 --><project name="platform/hardware/msm7k" path="hardware/msm7k" revision="8892d46805c5639b55dd07547745c5180da861e7"/>
+  <!-- Information: platform/vendor/qcom-opensource/omx/mm-core is tagged with M8960AAAAANLYA153611 --><project name="platform/vendor/qcom-opensource/omx/mm-core" path="vendor/qcom/opensource/omx/mm-core" revision="3b0013a27cea8c30f405c5edd19d85a61a8eacd8"/>
+  <!-- Information: platform/hardware/ril is tagged with M76XXUSNEKNLYA1550 --><project name="platform/hardware/ril" path="hardware/ril" remote="caf" revision="fe9a3f63922143b57e79ed570bab2328df8c83a5"/>
 </manifest>
