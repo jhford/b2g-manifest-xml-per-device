@@ -1,0 +1,9 @@
+This repository has the repo manifests needed to build Boot 2 Gecko
+for a variety of devices
+
+Supported Devices:
+* Google Nexus S -- crespo.xml
+* ARM and X86 Emulators -- emulator.xml
+* Samsung Galaxy S2 -- galaxy-s2.xml
+* Galaxy Nexus -- maguro.xml
+* Otoro -- otoro.xml
